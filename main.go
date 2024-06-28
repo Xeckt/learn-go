@@ -1,13 +1,14 @@
 package main
 
 import (
-	"github.com/Xeckt/learn-go/player"
+	"github.com/Xeckt/learn-go/inventory"
+	"github.com/Xeckt/learn-go/item"
 )
 
 func main() {
-	inventory := player.Inventory{
-		Items:    make(map[string]player.ItemManager),
+	playerInventory := inventory.Inventory{
+		Items:    make(map[string]item.ItemManager),
 		Capacity: 10,
 	}
-	inventory.AddItem(player.NewItemManager().GenerateItem(player.HealthPotion, 10))
+	playerInventory.AddItem(item.GenerateItem(item.HealthPotion, 10))
 }

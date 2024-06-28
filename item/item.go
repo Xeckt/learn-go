@@ -1,4 +1,4 @@
-package player
+package item
 
 type ItemManager struct {
 	Id       int
@@ -15,11 +15,7 @@ const (
 	Shield
 )
 
-func NewItemManager() *ItemManager {
-	return &ItemManager{}
-}
-
-func (i ItemManager) GenerateItem(item Item, quantity int) ItemManager {
+func GenerateItem(item Item, quantity int) ItemManager {
 	switch item {
 	case HealthPotion:
 		return ItemManager{
